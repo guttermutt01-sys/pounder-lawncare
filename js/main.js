@@ -16,6 +16,50 @@ if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
 
+// ===== Gallery filters (gallery page only) =====
+const filterButtons = document.querySelectorAll(".filter-btn");
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter; // "all", "mowing", etc.
+
+    // Highlight the clicked button only
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    // Show photos that match, hide the rest
+    galleryItems.forEach((item) => {
+      const matches = filter === "all" || item.dataset.category === filter;
+      item.classList.toggle("hidden", !matches);
+    });
+  });
+});
+
+// ===== Lightbox: click a photo to see it bigger =====
+const lightbox = document.querySelector(".lightbox");
+
+if (lightbox) {
+  const lightboxImg = lightbox.querySelector("img");
+  const lightboxCaption = lightbox.querySelector(".lightbox-caption");
+
+  galleryItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const img = item.querySelector("img");
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.textContent = item.querySelector("figcaption").textContent;
+      lightbox.showModal(); // built-in: opens the <dialog> (Esc closes it)
+    });
+  });
+
+  // Close with the X button, or by clicking the dark area outside the photo
+  lightbox.querySelector(".lightbox-close").addEventListener("click", () => lightbox.close());
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+}
+
 // ===== Quote form (contact page only) =====
 const quoteForm = document.querySelector("#quote-form");
 

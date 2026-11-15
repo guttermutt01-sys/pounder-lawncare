@@ -895,7 +895,123 @@ h1, h2, h3 {
 }
 
 /* =========================================
-   16. MOBILE (screens 800px wide and smaller)
+   16. GALLERY PAGE
+   ========================================= */
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  font: inherit;
+  font-weight: 600;
+  background: var(--white);
+  color: var(--green-dark);
+  border: 2px solid var(--green-light);
+  border-radius: 50px;
+  padding: 8px 22px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: var(--green);
+}
+
+.filter-btn.active {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;            /* hides the zoomed part of the image */
+  border-radius: var(--radius);
+  aspect-ratio: 4 / 3;         /* every tile the same shape */
+  background: var(--green-light);   /* shows while a photo is missing/loading */
+  cursor: zoom-in;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);      /* slow zoom on hover */
+}
+
+/* Caption slides up over the bottom of the photo */
+.gallery-item figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px 16px 14px;
+  background: linear-gradient(transparent, rgba(20, 45, 30, 0.85));
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* Used by JavaScript to hide photos that don't match the filter */
+.gallery-item.hidden {
+  display: none;
+}
+
+/* ----- Lightbox popup ----- */
+.lightbox {
+  border: none;
+  background: transparent;
+  max-width: 92vw;
+  max-height: 92vh;
+  margin: auto;
+  padding: 0;
+  overflow: visible;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.85);    /* dark overlay behind the popup */
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 80vh;
+  border-radius: var(--radius);
+}
+
+.lightbox-caption {
+  color: var(--white);
+  text-align: center;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 2.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* =========================================
+   17. MOBILE (screens 800px wide and smaller)
    ========================================= */
 @media (max-width: 800px) {
   .nav-toggle {

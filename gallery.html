@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Gallery | Pounder Lawn Care</title>
+  <meta name="description" content="See lawns, garden beds, and yard cleanups completed by Pounder Lawn Care in Springfield and surrounding towns.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        Pounder <span>Lawn Care</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="btn btn-small">Free Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== PAGE BANNER ===== -->
+    <section class="page-banner">
+      <div class="container">
+        <h1>Our Work</h1>
+        <p>A few of the yards we've had the pleasure of taking care of.</p>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Filter buttons: data-filter matches each photo's data-category -->
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="mowing">Lawn Care</button>
+          <button class="filter-btn" data-filter="landscaping">Landscaping</button>
+          <button class="filter-btn" data-filter="cleanup">Cleanups</button>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item" data-category="mowing">
+            <img src="images/gallery-1.jpg" alt="Freshly mowed lawn with clean striped lines" loading="lazy">
+            <figcaption>Weekly mowing &amp; edging</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="landscaping">
+            <img src="images/gallery-2.jpg" alt="New flower bed with colorful plants and fresh mulch" loading="lazy">
+            <figcaption>New flower bed install</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="cleanup">
+            <img src="images/gallery-3.jpg" alt="Yard cleared of fall leaves" loading="lazy">
+            <figcaption>Fall leaf cleanup</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="mowing">
+            <img src="images/gallery-4.jpg" alt="Large green backyard lawn" loading="lazy">
+            <figcaption>Backyard lawn maintenance</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="landscaping">
+            <img src="images/gallery-5.jpg" alt="Landscaped front yard with shrubs and stone border" loading="lazy">
+            <figcaption>Front yard makeover</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="cleanup">
+            <img src="images/gallery-6.jpg" alt="Neatly trimmed hedges along a walkway" loading="lazy">
+            <figcaption>Hedge trimming &amp; shaping</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="mowing">
+            <img src="images/gallery-7.jpg" alt="Lawn mower cutting thick green grass" loading="lazy">
+            <figcaption>Thick, healthy turf</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="landscaping">
+            <img src="images/gallery-8.jpg" alt="Garden with plants, mulch beds, and a stone path" loading="lazy">
+            <figcaption>Garden &amp; walkway design</figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="cleanup">
+            <img src="images/gallery-9.jpg" alt="Spring yard cleanup with fresh-cut edges" loading="lazy">
+            <figcaption>Spring cleanup</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LIGHTBOX (big photo popup) ===== -->
+    <!-- <dialog> is a built-in HTML popup. JavaScript opens it when a photo is clicked. -->
+    <dialog class="lightbox" aria-label="Enlarged photo">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <img src="" alt="">
+      <p class="lightbox-caption"></p>
+    </dialog>
+
+    <!-- ===== CALL-TO-ACTION BANNER ===== -->
+    <section class="cta-banner">
+      <div class="container cta-inner">
+        <div>
+          <h2>Want your yard to be next?</h2>
+          <p>Tell us what you have in mind and we'll put together a free quote.</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn">Get a Free Quote</a>
+          <a href="tel:5555551234" class="btn btn-outline">Call Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="logo">Pounder <span>Lawn Care</span></a>
+        <p>Locally owned lawn care and landscaping. Reliable service, fair prices, and yards you'll be proud of.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:5555551234">📞 (555) 555-1234</a></li>
+          <li><a href="mailto:info@pounderlawncare.com">✉️ info@pounderlawncare.com</a></li>
+          <li>📍 Serving Springfield &amp; surrounding areas</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Hours</h3>
+        <ul>
+          <li>Mon – Fri: 7am – 6pm</li>
+          <li>Saturday: 8am – 2pm</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Pounder Lawn Care. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
